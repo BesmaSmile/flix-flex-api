@@ -2,8 +2,8 @@ import { validator } from '../../helpers';
 
 const register = async (req, res, next) => {
   const validationRule = {
-    firstname: 'required|string',
-    lastname: 'required|string',
+    firstName: 'required|string',
+    lastName: 'required|string',
     username: 'required|string|unique:User,username',
     password: 'required|string',
   };
