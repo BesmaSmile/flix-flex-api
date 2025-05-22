@@ -8,6 +8,7 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import { SearchDto } from 'src/tv-shows/dto/search.dto';
+import { Public } from 'src/auth/public.decorator';
 
 @Controller('movies')
 @ApiTags('Movies')
@@ -30,6 +31,7 @@ export class MoviesController {
     return this.moviesService.getPopularMovies(page);
   }
 
+  @Public()
   @Get('upcoming')
   @ApiOperation({
     summary: 'Get upcoming movies',
